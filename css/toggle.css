@@ -15,7 +15,7 @@ input.cmn-toggle-round-flat + label {
   padding: 2px;
   width: 120px;
   height: 60px;
-  background-color: #dddddd;
+  background-color: #4f8bd1;
   border-radius: 60px;
   transition: background 0.4s;
 }
@@ -30,7 +30,7 @@ input.cmn-toggle-round-flat + label:before {
   left: 2px;
   bottom: 2px;
   right: 2px;
-  background-color: #fff;
+  background-color: #4f8bd1;
   border-radius: 60px;
   transition: background 0.4s;
 }
