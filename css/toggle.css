@@ -15,7 +15,7 @@ input.cmn-toggle-round-flat + label {
   padding: 2px;
   width: 120px;
   height: 60px;
-  background-color: #4f8bd1;
+  background-color: #dddddd;
   border-radius: 60px;
   transition: background 0.4s;
 }
