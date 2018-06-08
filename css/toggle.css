@@ -39,7 +39,8 @@ input.cmn-toggle-round-flat + label:after {
   left: 4px;
   bottom: 4px;
   width: 52px;
-  background-color: #dddddd;
+  background-color: #4f8bd1;
+  
   border-radius: 52px;
   transition: margin 0.4s, background 0.4s;
 }
