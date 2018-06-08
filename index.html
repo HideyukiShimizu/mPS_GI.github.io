@@ -23,6 +23,124 @@
 
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
+    
+     <!-- Custom SCSS -->
+    <style type="text/scss"> 
+    .gooey
+{
+  cursor:pointer;
+  display: inline-block;
+  height: $height;
+  width: $height;
+  background: $dark;
+  border-radius: 50%;
+  box-shadow:
+      $height/2 0 0 $dark
+    //, $height 0 0 $dark
+  ;
+  
+  &:after
+  {
+    content: '';
+    position: absolute;
+    left: $height/2;
+    bottom: $height * $rat ;
+    display: inline-block;
+    height: $height;
+    width: $height;
+    background: $p-bg;
+    border-radius: 50%;
+    box-shadow:
+      0 ($height * 2 * $rat) 0 $p-bg
+    ;
+  }
+  
+  &:before
+  {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: $height;
+    display: inline-block;
+    height: $height;
+    width: $height;
+    background: $dark;
+    border-radius: 50%;
+  }
+  
+  input
+  {
+    display: none;
+  }
+
+  span
+  {
+    position: relative;
+    margin: $gap;
+    display: inline-block;
+    height: $height - ($gap * 2);
+    width: $height - ($gap * 2);
+    background: $mid;
+    border-radius: 50%;
+    @include animation(gooey-unchecked 0.5s ease-in-out);
+  }
+  
+  input.active + span
+  {
+    left: 100%;
+    background: $on;
+    @include animation(gooey-checked 0.5s ease-in-out);
+
+  }
+  
+}
+
+@include keyframes(gooey-unchecked)
+{
+  0% {
+    left: 100%;
+    background: $on;
+  }
+  25% {
+    border-radius: 60%   40%   40%  60% / 50%;
+    @include transform3d( scaleY(0.8) );
+  }  
+  50% {
+    @include transform3d( scaleY(0.7) );
+  }
+  75% {
+    border-radius: 40%   60%   60%  40% / 50%;
+    @include transform3d( scaleY(0.8) );
+  }
+  100% {
+    left: 0;
+    background: $mid;
+  }
+}
+
+@include keyframes(gooey-checked)
+{
+  0% {
+    left: 0;
+    background: $mid;
+  }
+  25% {
+    border-radius: 40%   60%   60%  40% / 50%;
+    @include transform3d( scaleY(0.8) );
+  }  
+  50% {
+    @include transform3d( scaleY(0.7) );
+  }
+  75% {
+    border-radius: 60%   40%   40%  60% / 50%;
+    @include transform3d( scaleY(0.8) );
+  }
+  100% {
+    left: 100%;
+    background: $on;
+  }
+}
+    </style>
 
   </head>
 
@@ -98,7 +216,11 @@
         </div>
       </div>
       <div class="container">
-        FOXM1 <input type="checkbox" checked data-toggle="toggle" data-on="High" data-off="Low" data-onstyle="danger" data-offstyle="primary">
+        <div class="wrap">
+        <label class="gooey">
+          <input type="checkbox"/><span>FOXM1</span>
+        </label>
+      </div>
         <div class="row">
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
@@ -186,6 +308,11 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
+    
+     <!-- Bootstrap CDN 180608 10:00 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
   </body>
 
