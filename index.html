@@ -23,141 +23,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/creative.min.css" rel="stylesheet">
-    
-     <!-- Custom SCSS -->
-    <style type="text/scss"> 
-    @import 'compass';
-
-    $height: 6rem;
-    $gap: (1rem / 2);
-    $dark: #CCC;
-    $mid: #EAEAEA;
-    $on: #F95E2F;
-    $p-bg: #fff;
-    $rat: 0.8625;
-
-    .wrap {
-      position: absolute;
-      height: $height;
-      margin:auto;
-      width: ($height * 2);
-      top:0;right: 0;bottom: 0;left: 0;
-    }
-    .gooey
-    {
-      cursor:pointer;
-      display: inline-block;
-      height: $height;
-      width: $height;
-      background: $dark;
-      border-radius: 50%;
-      box-shadow:
-          $height/2 0 0 $dark
-        //, $height 0 0 $dark
-      ;
-
-      &:after
-      {
-        content: '';
-        position: absolute;
-        left: $height/2;
-        bottom: $height * $rat ;
-        display: inline-block;
-        height: $height;
-        width: $height;
-        background: $p-bg;
-        border-radius: 50%;
-        box-shadow:
-          0 ($height * 2 * $rat) 0 $p-bg
-        ;
-      }
-
-      &:before
-      {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: $height;
-        display: inline-block;
-        height: $height;
-        width: $height;
-        background: $dark;
-        border-radius: 50%;
-      }
-
-      input
-      {
-        display: none;
-      }
-
-      span
-      {
-        position: relative;
-        margin: $gap;
-        display: inline-block;
-        height: $height - ($gap * 2);
-        width: $height - ($gap * 2);
-        background: $mid;
-        border-radius: 50%;
-        @include animation(gooey-unchecked 0.5s ease-in-out);
-      }
-
-      input.active + span
-      {
-        left: 100%;
-        background: $on;
-        @include animation(gooey-checked 0.5s ease-in-out);
-
-      }
-
-    }
-
-    @include keyframes(gooey-unchecked)
-    {
-      0% {
-        left: 100%;
-        background: $on;
-      }
-      25% {
-        border-radius: 60%   40%   40%  60% / 50%;
-        @include transform3d( scaleY(0.8) );
-      }  
-      50% {
-        @include transform3d( scaleY(0.7) );
-      }
-      75% {
-        border-radius: 40%   60%   60%  40% / 50%;
-        @include transform3d( scaleY(0.8) );
-      }
-      100% {
-        left: 0;
-        background: $mid;
-      }
-    }
-
-    @include keyframes(gooey-checked)
-    {
-      0% {
-        left: 0;
-        background: $mid;
-      }
-      25% {
-        border-radius: 40%   60%   60%  40% / 50%;
-        @include transform3d( scaleY(0.8) );
-      }  
-      50% {
-        @include transform3d( scaleY(0.7) );
-      }
-      75% {
-        border-radius: 60%   40%   40%  60% / 50%;
-        @include transform3d( scaleY(0.8) );
-      }
-      100% {
-        left: 100%;
-        background: $on;
-      }
-    }
-    </style>
+   
 
   </head>
 
@@ -235,7 +101,7 @@
       </div>
       <div class="container">
           <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-       Single toggle
+       FOXM1
       </button>
       <a class="btn btn-light btn-xl  href="#calculation">Calculate mPS</a>
         <div class="row">
