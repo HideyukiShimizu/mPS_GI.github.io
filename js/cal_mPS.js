@@ -163,7 +163,7 @@ if($("#LAMB3").prop('checked')) {
    
 mPS = FOXM1 + CPT1A + GARS + MARS + UTP23 + ANLN + HMGB3 + ATP5F1B + APOOL + CYB561 + GRHL2 + ESRP1 + EZR + RBBP8 + CIRBP + PTGER3 + LAMA3 + OARD1 + ANKRD29 + EGR3 + DIRAS3 + MITD1 + LAMB3;
 Math.min (50.000, Math.round( mPS * Math.pow( 10, 3 ) ) / Math.pow( 10, 3 ));
-var phrase = '<h2> mPS = ' + mPS + '</h2>;
+var phrase = '<h2> mPS = ' + mPS + '</h2>';
 
 if(mPS < 5) { // 5回より少ない
   predict10y = '> 90%';
