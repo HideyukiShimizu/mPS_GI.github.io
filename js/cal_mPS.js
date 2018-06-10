@@ -163,6 +163,6 @@ if($("#LAMB3").prop('checked')) {
    }
    
 mPS = FOXM1 + CPT1A + GARS + MARS + UTP23 + ANLN + HMGB3 + ATP5F1B + APOOL + CYB561 + GRHL2 + ESRP1 + EZR + RBBP8 + CIRBP + PTGER3 + LAMA3 + OARD1 + ANKRD29 + EGR3 + DIRAS3 + MITD1 + LAMB3
-alert mPS;
+alert (mPS);
 return mPS;
 }
