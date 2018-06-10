@@ -239,6 +239,11 @@ else {  // それ以外の場合
 }
 }
 
-phrase = phrase + '<h2> Predicted 10-year survival rate: ' + predict10y + '</h2>';
+phrase = phrase + '<h2> Predicted 10-year survival rate: ' + predict10y + '</h2>' + '<h2>' + classes + '</h2>';
+if (classes == 'Class A'){
+     phrase = phrase + '<h2><strong>No</strong>chemotherapy is needed due to good prognosis</h2>'
+} else if (classes == 'Class B'){
+     phrase = phrase + '<h2><strong>No</strong> chemotherapy is needed due to good prognosis</h2>'
+}
 $('#result').children('div').children('div').children('div').children('h2').html(phrase);
 }
