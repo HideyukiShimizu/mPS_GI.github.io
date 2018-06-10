@@ -1,4 +1,4 @@
-console.log('v5 loaded');
+console.log('v6 loaded');
 function cal_mPS () {
 if($("#FOXM1").prop('checked')) {
      var FOXM1 =3.424;
@@ -163,8 +163,9 @@ if($("#LAMB3").prop('checked')) {
 var classes
 var predict10y
 var mPS = FOXM1 + CPT1A + GARS + MARS + UTP23 + ANLN + HMGB3 + ATP5F1B + APOOL + CYB561 + GRHL2 + ESRP1 + EZR + RBBP8 + CIRBP + PTGER3 + LAMA3 + OARD1 + ANKRD29 + EGR3 + DIRAS3 + MITD1 + LAMB3;
-Math.min (50.000, Math.round( mPS * Math.pow( 10, 3 ) ) / Math.pow( 10, 3 ));
-var phrase = '<h2> mPS = ' + mPS + '</h2>';
+mPS = Math.round( mPS * Math.pow( 10, 3 ) ) / Math.pow( 10, 3 );
+mPS = Math.min (50.000, mPS);
+var phrase = '<h2> mPS = <strong>' + mPS + '</strong></h2>';
 var cStage = $('input:radio[name="clinical"]:checked').val();
 if(mPS <5) { // 5回より少ない
   if(cStage == 'stage4'){  // stage4
@@ -239,7 +240,7 @@ else {  // それ以外の場合
 }
 }
 
-phrase = phrase + '<h2> Predicted 10-year survival rate: ' + predict10y + '</h2>' + '<h2>' + classes + '</h2>';
+phrase = phrase + '<h2>' + classes + '</h2>' + '<h2> Predicted 10-year survival rate: <strong>' + predict10y + '</strong></h2>' ;
 if (classes == 'Class A'){
      phrase = phrase + '<h2><strong>No</strong>chemotherapy is needed due to good prognosis</h2>'
 } else if (classes == 'Class B'){
