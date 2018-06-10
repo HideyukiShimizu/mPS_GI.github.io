@@ -1,6 +1,5 @@
-console.log('loaded');
+console.log('v2 loaded');
 function cal_mPS () {
-console.log('called');
 if($("#FOXM1").prop('checked')) {
      var FOXM1 =3.424;
    }
@@ -162,7 +161,8 @@ if($("#LAMB3").prop('checked')) {
      var LAMB3 =1.425;
    }
    
-mPS = FOXM1 + CPT1A + GARS + MARS + UTP23 + ANLN + HMGB3 + ATP5F1B + APOOL + CYB561 + GRHL2 + ESRP1 + EZR + RBBP8 + CIRBP + PTGER3 + LAMA3 + OARD1 + ANKRD29 + EGR3 + DIRAS3 + MITD1 + LAMB3
-alert (mPS);
-return mPS;
+mPS = FOXM1 + CPT1A + GARS + MARS + UTP23 + ANLN + HMGB3 + ATP5F1B + APOOL + CYB561 + GRHL2 + ESRP1 + EZR + RBBP8 + CIRBP + PTGER3 + LAMA3 + OARD1 + ANKRD29 + EGR3 + DIRAS3 + MITD1 + LAMB3;
+Math.min (50.000, Math.round( mPS * Math.pow( 10, 3 ) ) / Math.pow( 10, 3 ));
+var phrase = 'mPS = ' + mPS;
+$('#result').children('div').children('div').children('div').children('h2').text(phrase);
 }
