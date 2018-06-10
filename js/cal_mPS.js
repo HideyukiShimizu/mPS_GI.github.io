@@ -1,4 +1,4 @@
-console.log('v2 loaded');
+console.log('v3 loaded');
 function cal_mPS () {
 if($("#FOXM1").prop('checked')) {
      var FOXM1 =3.424;
@@ -163,6 +163,26 @@ if($("#LAMB3").prop('checked')) {
    
 mPS = FOXM1 + CPT1A + GARS + MARS + UTP23 + ANLN + HMGB3 + ATP5F1B + APOOL + CYB561 + GRHL2 + ESRP1 + EZR + RBBP8 + CIRBP + PTGER3 + LAMA3 + OARD1 + ANKRD29 + EGR3 + DIRAS3 + MITD1 + LAMB3;
 Math.min (50.000, Math.round( mPS * Math.pow( 10, 3 ) ) / Math.pow( 10, 3 ));
-var phrase = 'mPS = ' + mPS;
-$('#result').children('div').children('div').children('div').children('h2').text(phrase);
+var phrase = '<h2> mPS = ' + mPS + '</h2>;
+
+if(mPS < 5) { // 5回より少ない
+  predict10y = '> 90%';
+}
+else if(mPS < 11){ 
+  predict10y = '80 - 90%';
+}
+else if(mPS < 25){ 
+  predict10y = '60 - 70%';
+}
+else if(mPS < 36){ 
+  predict10y = '50 - 60%';
+}
+else if(mPS < 45){ 
+  predict10y = '40 - 50%';
+}
+else {  // それ以外の場合
+  predict10y = '< 40%';
+}
+phrase = phrase + '<h2> Predicted 10-year survival rate: ' + predict10y + '</h2>';
+$('#result').children('div').children('div').children('div').children('h2').html(phrase);
 }
