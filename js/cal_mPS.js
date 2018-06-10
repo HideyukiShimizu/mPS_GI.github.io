@@ -1,4 +1,4 @@
-console.log('v4 loaded');
+console.log('v5 loaded');
 function cal_mPS () {
 if($("#FOXM1").prop('checked')) {
      var FOXM1 =3.424;
