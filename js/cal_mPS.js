@@ -1,4 +1,4 @@
-console.log('v3 loaded');
+console.log('v4 loaded');
 function cal_mPS () {
 if($("#FOXM1").prop('checked')) {
      var FOXM1 =3.424;
@@ -160,29 +160,85 @@ if($("#LAMB3").prop('checked')) {
    else {
      var LAMB3 =1.425;
    }
-   
-mPS = FOXM1 + CPT1A + GARS + MARS + UTP23 + ANLN + HMGB3 + ATP5F1B + APOOL + CYB561 + GRHL2 + ESRP1 + EZR + RBBP8 + CIRBP + PTGER3 + LAMA3 + OARD1 + ANKRD29 + EGR3 + DIRAS3 + MITD1 + LAMB3;
+var classes
+var predict10y
+var mPS = FOXM1 + CPT1A + GARS + MARS + UTP23 + ANLN + HMGB3 + ATP5F1B + APOOL + CYB561 + GRHL2 + ESRP1 + EZR + RBBP8 + CIRBP + PTGER3 + LAMA3 + OARD1 + ANKRD29 + EGR3 + DIRAS3 + MITD1 + LAMB3;
 Math.min (50.000, Math.round( mPS * Math.pow( 10, 3 ) ) / Math.pow( 10, 3 ));
 var phrase = '<h2> mPS = ' + mPS + '</h2>';
-
-if(mPS < 5) { // 5回より少ない
+var cStage = $('input:radio[name="clinical"]:checked').val();
+if(mPS <5) { // 5回より少ない
+  if(cStage == 'stage4'){  // stage4
+  predict10y = '< 20%';
+  classes = 'Class F-II';
+} else {
   predict10y = '> 90%';
+  classes = 'Class A';
+}
 }
 else if(mPS < 11){ 
-  predict10y = '80 - 90%';
+  if(cStage == 'stage1'){  // stage1
+  predict10y = '> 90%';
+  classes = 'Class A';
+} else if (cStage == 'stage4'){
+  predict10y = '< 20%';
+  classes = 'Class F-II';
+} else {
+  predict10y = '70 - 80%';
+  classes = 'Class B';
+}
 }
 else if(mPS < 25){ 
+  if(cStage == 'stage1'){  // stage1
+  predict10y = '70 - 80%';
+  classes = 'Class B';
+} else if (cStage == 'stage4'){
+  predict10y = '< 20%';
+  classes = 'Class F-II';
+} else {
   predict10y = '60 - 70%';
+  classes = 'Class C';
+}
 }
 else if(mPS < 36){ 
+  if(cStage == 'stage1'){  // stage1
+  predict10y = '60 - 70%';
+  classes = 'Class C';
+} else if (cStage == 'stage4'){
+  predict10y = '< 20%';
+  classes = 'Class F-II';
+} else if (cStage == 'stage2'){
   predict10y = '50 - 60%';
+  classes = 'Class D';
+} else {
+  predict10y = '30 - 40%';
+  classes = 'Class F-I';
+}
 }
 else if(mPS < 45){ 
+  if(cStage == 'stage1'){  // stage1
+  predict10y = '50 - 60%';
+  classes = 'Class D';
+} else if (cStage == 'stage4'){
+  predict10y = '< 20%';
+  classes = 'Class F-II';
+} else if (cStage == 'stage2'){
   predict10y = '40 - 50%';
+  classes = 'Class E';
+} else {
+  predict10y = '30 - 40%';
+  classes = 'Class F-I';
+}
 }
 else {  // それ以外の場合
-  predict10y = '< 40%';
+  if(cStage == 'stage4'){  // stage4
+  predict10y = '< 20%';
+  classes = 'Class F-II';
+} else {
+  predict10y = '30 - 40%';
+  classes = 'Class F-I';
 }
+}
+
 phrase = phrase + '<h2> Predicted 10-year survival rate: ' + predict10y + '</h2>';
 $('#result').children('div').children('div').children('div').children('h2').html(phrase);
 }
