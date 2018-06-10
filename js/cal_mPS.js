@@ -1,6 +1,6 @@
-console.log('loaded')
+console.log('loaded');
 function cal_mPS () {
-console.log('called')
+console.log('called');
 if($("#FOXM1").prop('checked')) {
      var FOXM1 =3.424;
    }
