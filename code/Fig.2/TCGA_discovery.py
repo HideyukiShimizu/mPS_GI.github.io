@@ -9,7 +9,7 @@ data = pd.read_csv ('../../data/TCGA/TCGA_breast.csv', index_col=0)
 results= {}
 
 def logrank_test (gene): # usage: logrank_test(gene_name)
-    global data_copy # このglobal宣言が大事
+    global data_copy 
     data_copy = data.copy ()
     # If the expression level of that particular gene is above the median, group the patient into 'H' or 'high' subset
     # Conversely, when below median, we allocated her to 'L' or 'low' group.
