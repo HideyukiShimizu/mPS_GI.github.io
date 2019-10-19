@@ -116,6 +116,9 @@ var mPS = PER3 + PRSS53 + KIFC3 + TYRP1 + BTBD16 + CHRNA3 + LGR4 + LYAR + CCT2 +
 mPS = Math.round( mPS * Math.pow( 10, 3 ) ) / Math.pow( 10, 3 );
 mPS = Math.min (50.000, mPS);
 var phrase = '<h2> mPS = <strong>' + mPS + '</strong></h2>';
+console.log ('正常かどう');
+console.log (mPS);
+console.log (phrase);
 var cStage = $('input:radio[name="clinical"]:checked').val();
 if(mPS <10) { // 10より少ない
   predict10y = '80 - 90 %';
