@@ -125,9 +125,12 @@ if(mPS <10) { // 10より少ない
 }
 else if(mPS < 25){ 
   predict10y = '70 - 80%';
+  console.log (mPS);
 }
 else if(mPS < 40){ 
   predict10y = '60 - 70%';
+     
+  console.log (mPS);
 }
 else {
   predict10y = '< 50%';
