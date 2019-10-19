@@ -117,84 +117,20 @@ mPS = Math.round( mPS * Math.pow( 10, 3 ) ) / Math.pow( 10, 3 );
 mPS = Math.min (50.000, mPS);
 var phrase = '<h2> mPS = <strong>' + mPS + '</strong></h2>';
 var cStage = $('input:radio[name="clinical"]:checked').val();
-if(mPS <5) { // 5回より少ない
-  if(cStage == 'stage4'){  // stage4
-  predict10y = '< 20%';
-  classes = 'Class F-II';
-} else {
-  predict10y = '> 90%';
-  classes = 'Class A';
-}
-}
-else if(mPS < 11){ 
-  if(cStage == 'stage1'){  // stage1
-  predict10y = '> 90%';
-  classes = 'Class A';
-} else if (cStage == 'stage4'){
-  predict10y = '< 20%';
-  classes = 'Class F-II';
-} else {
-  predict10y = '70 - 80%';
-  classes = 'Class B';
-}
+if(mPS <10) { // 10より少ない
+  predict10y = '80 - 90 %';
 }
 else if(mPS < 25){ 
-  if(cStage == 'stage1'){  // stage1
   predict10y = '70 - 80%';
-  classes = 'Class B';
-} else if (cStage == 'stage4'){
-  predict10y = '< 20%';
-  classes = 'Class F-II';
-} else {
+}
+else if(mPS < 40){ 
   predict10y = '60 - 70%';
-  classes = 'Class C';
 }
-}
-else if(mPS < 36){ 
-  if(cStage == 'stage1'){  // stage1
-  predict10y = '60 - 70%';
-  classes = 'Class C';
-} else if (cStage == 'stage4'){
-  predict10y = '< 20%';
-  classes = 'Class F-II';
-} else if (cStage == 'stage2'){
-  predict10y = '50 - 60%';
-  classes = 'Class D';
-} else {
-  predict10y = '30 - 40%';
-  classes = 'Class F-I';
-}
-}
-else if(mPS < 45){ 
-  if(cStage == 'stage1'){  // stage1
-  predict10y = '50 - 60%';
-  classes = 'Class D';
-} else if (cStage == 'stage4'){
-  predict10y = '< 20%';
-  classes = 'Class F-II';
-} else if (cStage == 'stage2'){
-  predict10y = '40 - 50%';
-  classes = 'Class E';
-} else {
-  predict10y = '30 - 40%';
-  classes = 'Class F-I';
-}
-}
-else {  // それ以外の場合
-  if(cStage == 'stage4'){  // stage4
-  predict10y = '< 20%';
-  classes = 'Class F-II';
-} else {
-  predict10y = '30 - 40%';
-  classes = 'Class F-I';
-}
+else {
+  predict10y = '< 50%';
 }
 phrase = "<h3> This is currently for research purpose only </h3>"
-phrase = phrase + '<h2>' + classes + '</h2>' + '<h2> Predicted 10-year survival rate: <strong>' + predict10y + '</strong></h2>' ;
-if (classes == 'Class A'){
-     phrase = phrase + '<h2>Chemotherapy might <strong>NOT</strong> be needed due to good prognosis</h2>'
-} else if (classes == 'Class B'){
-     phrase = phrase + '<h2>Chemotherapy might <strong>NOT</strong> be needed due to good prognosis</h2>'
-}
+phrase = phrase + '<h2>' + '<h2> Predicted 10-year relapse free survival rate: <strong>' + predict10y + '</strong></h2>' ;
+
 $('#result').children('div').children('div').children('div').children('h2').html(phrase);
 }
