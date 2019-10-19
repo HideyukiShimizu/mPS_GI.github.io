@@ -129,8 +129,8 @@ else if(mPS < 40){
 else {
   predict10y = '< 50%';
 }
-phrase = "<h3> This is currently for research purpose only </h3>"
-phrase = phrase + '<h2>' + '<h2> Predicted 10-year relapse free survival rate: <strong>' + predict10y + '</strong></h2>' ;
+phrase = phrase + "<h3> This is currently for research purpose only </h3>"
+phrase = phrase  + '<h2> Predicted 10-year relapse free survival rate: <strong>' + predict10y + '</strong></h2>' ;
 
 $('#result').children('div').children('div').children('div').children('h2').html(phrase);
 }
