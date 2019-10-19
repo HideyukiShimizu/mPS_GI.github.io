@@ -1,167 +1,118 @@
 function cal_mPS () {
-if($("#FOXM1").prop('checked')) {
-     var FOXM1 =3.424;
+if($("#PER3").prop('checked')) {
+     var PER3 =5.100;
    }
    else {
-     var FOXM1 =0;
+     var PER3 =0;
    }
    
-if($("#CPT1A").prop('checked')) {
-     var CPT1A =3.399;
+if($("#PRSS53").prop('checked')) {
+     var PRSS53 =4.569;
    }
    else {
-     var CPT1A =0;
+     var PRSS53 =0;
    }
    
-if($("#GARS").prop('checked')) {
-     var GARS =2.539;
+if($("#KIFC3").prop('checked')) {
+     var KIFC3 =3.328;
    }
    else {
-     var GARS =0;
+     var KIFC3 =0;
    }
   
-if($("#MARS").prop('checked')) {
-     var MARS =2.312;
+if($("#TYRP1").prop('checked')) {
+     var TYRP1 =2.078;
    }
    else {
-     var MARS =0;
+     var TYRP1 =0;
    }
    
-if($("#UTP23").prop('checked')) {
-     var UTP23 =2.311;
+if($("#BTBD16").prop('checked')) {
+     var BTBD16 =1.337;
    }
    else {
-     var UTP23 =0;
+     var BTBD16 =0;
    }
    
-if($("#ANLN").prop('checked')) {
-     var ANLN =2.225;
+if($("#CHRNA3").prop('checked')) {
+     var CHRNA3 =1.047;
    }
    else {
-     var ANLN =0;
+     var CHRNA3 =0;
    }
    
-if($("#HMGB3").prop('checked')) {
-     var HMGB3 =2.202;
+if($("#LGR4").prop('checked')) {
+     var LGR4 =0;
    }
    else {
-     var HMGB3 =0;
+     var LGR4 =4.597;
    }
    
-if($("#ATP5F1B").prop('checked')) {
-     var ATP5F1B =1.934;
+if($("#LYAR").prop('checked')) {
+     var LYAR =0;
    }
    else {
-     var ATP5F1B =0;
+     var LYAR =4.439;
    }
    
-if($("#APOOL").prop('checked')) {
-     var APOOL =1.754;
+if($("#CCT2").prop('checked')) {
+     var CCT2 =0;
    }
    else {
-     var APOOL =0;
+     var CCT2 =4.404;
    }
    
-if($("#CYB561").prop('checked')) {
-     var CYB561 =1.594;
+if($("#CCNE1").prop('checked')) {
+     var CCNE1 =0;
    }
    else {
-     var CYB561 =0;
+     var CCNE1 =4.226;
    }
    
-if($("#GRHL2").prop('checked')) {
-     var GRHL2 =1.526;
+if($("#PRMT1").prop('checked')) {
+     var PRMT1 =0;
    }
    else {
-     var GRHL2 =0;
+     var PRMT1 =4.155;
    }
    
-if($("#ESRP1").prop('checked')) {
-     var ESRP1 =1.485;
+if($("#TESK2").prop('checked')) {
+     var TESK2 =0;
    }
    else {
-     var ESRP1 =0;
+     var TESK2 =4.060;
    }
    
-if($("#EZR").prop('checked')) {
-     var EZR =1.372;
+if($("#LYPD6").prop('checked')) {
+     var LYPD6 =0;
    }
    else {
-     var EZR =0;
+     var LYPD6 =3.960;
    }
    
-if($("#RBBP8").prop('checked')) {
-     var RBBP8 =0;
+if($("#F2RL1").prop('checked')) {
+     var F2RL1 =0;
    }
    else {
-     var RBBP8 =3.095;
+     var F2RL1 =1.465;
    }
    
-if($("#CIRBP").prop('checked')) {
-     var CIRBP =0;
+if($("#CEP55").prop('checked')) {
+     var CEP55 =0;
    }
    else {
-     var CIRBP =3.083;
-   }
-   
-if($("#PTGER3").prop('checked')) {
-     var PTGER3 =0;
-   }
-   else {
-     var PTGER3 =2.802;
-   }
-   
-if($("#LAMA3").prop('checked')) {
-     var LAMA3 =0;
-   }
-   else {
-     var LAMA3 =2.601;
-   }
-   
-if($("#OARD1").prop('checked')) {
-     var OARD1 =0;
-   }
-   else {
-     var OARD1 =2.008;
-   }
-   
-if($("#ANKRD29").prop('checked')) {
-     var ANKRD29 =0;
-   }
-   else {
-     var ANKRD29 =1.886;
-   }
-   
-if($("#EGR3").prop('checked')) {
-     var EGR3 =0;
-   }
-   else {
-     var EGR3 =1.836;
-   }
-   
-if($("#DIRAS3").prop('checked')) {
-     var DIRAS3 =0;
-   }
-   else {
-     var DIRAS3 =1.821;
-   }
-   
-if($("#MITD1").prop('checked')) {
-     var MITD1 =0;
-   }
-   else {
-     var MITD1 =1.425;
+     var CEP55 =1.061;
    }
 
-if($("#LAMB3").prop('checked')) {
-     var LAMB3 =0;
+if($("#SIAE").prop('checked')) {
+     var SIAE =0;
    }
    else {
-     var LAMB3 =1.425;
+     var SIAE =0.174;
    }
 var classes
 var predict10y
-var mPS = FOXM1 + CPT1A + GARS + MARS + UTP23 + ANLN + HMGB3 + ATP5F1B + APOOL + CYB561 + GRHL2 + ESRP1 + EZR + RBBP8 + CIRBP + PTGER3 + LAMA3 + OARD1 + ANKRD29 + EGR3 + DIRAS3 + MITD1 + LAMB3;
+var mPS = PER3 + PRSS53 + KIFC3 + TYRP1 + BTBD16 + CHRNA3 + LGR4 + LYAR + CCT2 + CCNE1 + PRMT1 + TESK2 + LYPD6 + F2RL1 + CEP55 + SIAE;
 mPS = Math.round( mPS * Math.pow( 10, 3 ) ) / Math.pow( 10, 3 );
 mPS = Math.min (50.000, mPS);
 var phrase = '<h2> mPS = <strong>' + mPS + '</strong></h2>';
