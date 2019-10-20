@@ -116,25 +116,31 @@ var mPS = PER3 + PRSS53 + KIFC3 + TYRP1 + BTBD16 + CHRNA3 + LGR4 + LYAR + CCT2 +
 mPS = Math.round( mPS * Math.pow( 10, 3 ) ) / Math.pow( 10, 3 );
 mPS = Math.min (50.000, mPS);
 var phrase = '<h2> mPS = <strong>' + mPS + '</strong></h2>';
-console.log ('正常かどう');
-console.log (mPS);
-console.log (phrase);
+console.log ('new');
 var cStage = $('input:radio[name="clinical"]:checked').val();
-if(mPS <10) { // 10より少ない
+console.log (cStage);
+if (cStage =='Colorectal cancer') {
+  if(mPS <10) { // 10より少ない
   predict10y = '80 - 90 %';
-}
-else if(mPS < 25){ 
+  }
+  else if(mPS < 25){ 
   predict10y = '70 - 80%';
-  console.log (mPS);
-}
-else if(mPS < 40){ 
+  }
+  else if(mPS < 40){ 
   predict10y = '60 - 70%';
-     
-  console.log (mPS);
-}
-else {
+  }
+  else {
   predict10y = '< 50%';
+  }
+} else {
+   if(mPS <25) { // 25より少ない
+  predict10y = '50 - 70 %';
+  }
+  else { 
+  predict10y = '30 - 50%';
+  }
 }
+
 phrase = phrase + "<h3> This is currently for research purpose only </h3>"
 phrase = phrase  + '<h2> Predicted 10-year relapse free survival rate: <strong>' + predict10y + '</strong></h2>' ;
 
